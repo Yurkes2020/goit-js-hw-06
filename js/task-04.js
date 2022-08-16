@@ -14,6 +14,7 @@ const decrement = () => {
 document
   .querySelector("[data-action='increment']")
   .addEventListener('click', increment);
+
 document
   .querySelector("[data-action='decrement']")
   .addEventListener('click', decrement);
