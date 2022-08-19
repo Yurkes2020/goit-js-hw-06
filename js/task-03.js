@@ -13,11 +13,25 @@ const images = [
   },
 ];
 
-images.map((el) => {
-  document
-    .querySelector('.gallery')
-    .insertAdjacentHTML(
-      'beforeEnd',
-      `<li><img src="${el.url}" alt="${el.alt}"></li>`
-    );
-});
+// const imageRef = images.map((el) => {
+//   document
+//     .querySelector('.gallery')
+//     .insertAdjacentHTML(
+//       'beforeEnd',
+//       `<li><img src="${el.url}" alt="${el.alt}"></li>`
+//     );
+// });
+
+const makeImageMarkup = ({ url, alt }) => {
+  return `
+  <li>
+    <img class="task3__image" src="${url}" alt="${alt}"/>
+  </li>
+  `;
+};
+
+const galleryRef = document.querySelector('ul.gallery');
+galleryRef.insertAdjacentHTML(
+  'afterbegin',
+  images.map(makeImageMarkup).join('')
+);
